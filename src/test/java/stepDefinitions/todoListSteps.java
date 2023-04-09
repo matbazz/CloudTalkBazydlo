@@ -11,7 +11,7 @@ import java.util.List;
 
 public class todoListSteps {
 
-    private WebDriver _driver;
+    private final WebDriver _driver;
 
     public todoListSteps(WebDriver driver){
         this._driver = driver;
