@@ -10,8 +10,7 @@ public class todoListTest extends parentTest{
      */
     @Test
     public void addNewElementsToTheListAndVerify(){
-        _todoListSteps.addTaskToList(todoListConstants.buySomeCheeseTask);
-        _todoListSteps.addTaskToList(todoListConstants.feedTheCatTask);
+        addElementsToTheList();
         _todoListSteps.verifyItemInTodoList(_todoListSteps.getTodoListElementText(0), todoListConstants.buySomeCheeseTask);
         _todoListSteps.verifyItemInTodoList(_todoListSteps.getTodoListElementText(1), todoListConstants.feedTheCatTask);
         _todoListSteps.verifyNumberOfItemsInTodoList(_todoListSteps.getTodoList(), 2);
@@ -22,8 +21,13 @@ public class todoListTest extends parentTest{
      */
     @Test
     public void checkElementsOnTheListAndVerify(){
-        addNewElementsToTheListAndVerify();
+        addElementsToTheList();
         _todoListSteps.checkElementOnTheList(_todoListSteps.getTodoList(), 0);
         _todoListSteps.verifyIfElementIsToggled(_todoListSteps.getTodoListElementText(0));
+    }
+
+    private void addElementsToTheList(){
+        _todoListSteps.addTaskToList(todoListConstants.buySomeCheeseTask);
+        _todoListSteps.addTaskToList(todoListConstants.feedTheCatTask);
     }
 }
